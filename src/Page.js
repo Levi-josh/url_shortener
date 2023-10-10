@@ -57,7 +57,8 @@ export default function Page() {
           <div className=' lg:flex justify-center lg:gap-2'>  <h1 className='text-lg font-bold lg:text-xl xl:text-2xl'>Effortless URL Shortening For </h1><span className='text-lg font-bold text-blue-600 lg:text-xl xl:text-2xl '>Everyone</span></div>
           <p className='pt-1  text-md text-black font-semibold md:pt-1 lg:pt-4 md:text-lg xl:text-xl'>Effortlessly create short links for social media,marketing and more</p>
           <div className='flex  justify-center flex-col md:flex-row lg:px-72  md:px-44 lg:gap-10'>
-            <input type='text' placeholder='Enter your long link here' className=' rounded-md outline-none m-auto pl-2 mt-4 h-7 w-80 placeholder:text-black sm:w-96 md:h-8 lg:h-9 lg:w-full ' />
+            <input type='text' placeholder='Enter your long link here' className=' rounded-md outline-none m-auto pl-2 mt-2 md:mt-4 h-7 w-80 placeholder:text-black  placeholder:text-center md:placeholder:text-start
+             sm:w-96 md:h-8 lg:h-9 lg:w-full ' />
             <button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28'>shorten url</button>
           </div>
           <p className='mt-2 text-sm md:text-base md:mt-6 md:mb-6 lg:mb-8 lg:text-lg'>By using this our url shortener you agree to our terms and condition</p>
@@ -91,15 +92,15 @@ export default function Page() {
           </div>
           <div className='mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 '>
             <div className='mt-10'>
-              <div className='flex justify-between  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{showinfo1 ? <FaChevronCircleDown onClick={displayinfo1} className=' sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo1} className='sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{showinfo1 ? <FaChevronCircleDown onClick={displayinfo1} className='text-sm sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo1} className='text-sm sm:text-base lg:text-xl' />}</div>
               <div className='border-b-2 border-black overflow-hidden '><p className={`xl:text-lg mb-2 ${showinfo1 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`}>A url shortener is used in making the url of a website short and simple</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2 mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{showinfo2 ? <FaChevronCircleDown onClick={displayinfo2} className=' sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo2} className=' sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2 mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{showinfo2 ? <FaChevronCircleDown onClick={displayinfo2} className='text-sm sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo2} className='text-sm sm:text-base lg:text-xl' />}</div>
               <div className='border-b-2 border-black'><p className={`xl:text-lg mb-2 ${showinfo2 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`} >its simple all you have to do is paste in your long link and press the shorten button</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{showinfo3 ? <FaChevronCircleDown onClick={displayinfo3} className='sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo3} className='sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{showinfo3 ? <FaChevronCircleDown onClick={displayinfo3} className='text-sm sm:text-base lg:text-xl' /> : <FaChevronCircleUp onClick={displayinfo3} className='text-sm sm:text-base lg:text-xl' />}</div>
               <div className='border-b-2 border-black'><p className={`xl:text-lg mb-2 ${showinfo3 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`}>yes,you can customize your shortened links,all you have to do is to ..............</p></div>
             </div>
             <div>
@@ -116,9 +117,9 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className='bg-blue-600 mt-10 w-80 m-auto mb-10 h-80 text-center pt-5 px-3 rounded-lg sm:w-100 sm:h-72 md:w-200 md:h-60 md:pt-10 md:px-5 md:mt-14 lg:w-300 xl:w-400 xl:px-20'>
+        <div className='bg-blue-600 mt-10 w-80 m-auto mb-10 h-80 text-center pt-10 px-3 rounded-lg sm:w-100 sm:h-72 md:w-200 md:h-60 md:pt-10 md:px-5 md:mt-14 lg:w-300 xl:w-400 xl:px-20'>
           <h1 className='font-bold text-white text-lg lg:text-xl'>Weblify URL shortener</h1>
-          <p className='text-white mt-5 md:mt-5 text-lg'>Weblify serves as a user-friendly URL shortener that simplifies the process of managing and shortening links,including branded ones.Enhance your brand's growth and business potential by utilizing short,memorable,and engaging links with weblify's versatile platform. </p>
+          <p className='text-white text-sm mt-8 md:mt-5 md:text-lg'>Weblify serves as a user-friendly URL shortener that simplifies the process of managing and shortening links,including branded ones.Enhance your brand's growth and business potential by utilizing short,memorable,and engaging links with weblify's versatile platform. </p>
         </div>
 
 
