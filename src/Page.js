@@ -36,7 +36,7 @@ export default function Page() {
   return (
     <div className='w-full'>
       <header className='bg-blue-600 flex justify-between items-center h-12 text text-white sm:h-14 md:h-14 xl:h-16 fixed w-full '>
-        <div className='  border-white border-r-2 h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
+        <div className='  border-white border-r-r h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
 
           <h2 className='pl-3   border-white  sm:pl-5  md:pl-7 text-lg  lg:font-bold  lg:pl-16'>Weblify</h2>
         </div>
@@ -53,18 +53,18 @@ export default function Page() {
       </header>
       <section>
 
-        <div className=' bg-newblue h-100 pt-20 text-center pb-3 sm:pt-24 lg:pt-28 xl:pt-32 md:pt-25 px-3'>
-          <div className=' lg:flex justify-center lg:gap-2'>  <h1 className='text-lg font-bold lg:text-xl xl:text-2xl'>Effortless URL Shortening For </h1><span className='text-lg font-bold text-blue-600 lg:text-xl xl:text-2xl '>Everyone.</span> </div>
-          <p className='pt-1  text-md text-black font-semibold md:pt-1 lg:pt-4 md:text-lg xl:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
-          <div className='flex  justify-center flex-col md:flex-row lg:px-72  md:px-44 lg:gap-10'>
+        <div className=' bg-newblue h-100 pt-24 text-center pb-10 sm:pt-28 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
+          <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
+          <p className='pt-3  text-md text-black font-semibold md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
+          <div className='flex  justify-center flex-col md:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10  '>
             <input type='text' placeholder='Enter your long link here' className=' rounded-md outline-none m-auto pl-2 mt-2 md:mt-4 h-7 w-80 placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:h-9 lg:w-full ' />
-            <button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28'>shorten url</button>
+             sm:w-96 md:h-8 lg:w-400 lg:h-9 xl:w-full xl:mt-6 xl:h-10' />
+            <button className='bg-blue-600 w-80 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8'>shorten url</button>
           </div>
-          <p className='mt-2 text-sm md:text-base md:mt-6 md:mb-6 lg:mb-8 lg:text-lg'>By using this our url shortener you agree to our terms and condition</p>
+          <p className='mt-2 text-sm md:text-base md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
         </div>
 
-        <p className='text-center mt-5 text-lg mb-5 sm:mb-10 sm:mt-7 lg:text-xl lg:mt-8 lg:mb-8'>Why <span className='font-bold'>weblify</span>?</p>
+        <p className='text-center mt-5 text-lg mb-5 sm:mb-10 sm:mt-7 lg:text-3xl lg:mt-8 lg:mb-8 '>Why <span className='font-bold'>weblify</span>?</p>
         <div className='flex flex-col justify-center items-center gap-6 md:px-5 md:flex-row xl:gap-24 '>
           <div className='w-64 bg-newblue  h-72 rounded-xl text-center pt-10 px-5 lg:w-72 lg:h-96 sm:w-72 sm:h-80'>
             <div className='bg-black w-10 h-10 rounded-full flex justify-center items-center m-auto sm:w-12 sm:h-12 lg:w-16 lg:h-16 md:h-14 md:w-14'><FaLink className='text-lg text-white lg:text-xl' /></div>
