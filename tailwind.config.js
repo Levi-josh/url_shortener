@@ -10,7 +10,14 @@ module.exports = {
         100: '500px',
         200: '700px',
         300: '950px',
-        400: '1000px'
+        400: '1000px',
+        120: '2000px'
+      },
+      borderWidth: {
+        r: "0.1px"
+      },
+      minWidth: {
+        md2: '890px'
       }
     },
   },
