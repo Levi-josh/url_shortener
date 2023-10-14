@@ -1,9 +1,16 @@
 import React from 'react';
-import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopyright, FaLink, FaPaintBrush, FaSortAlphaDown, FaSortDown } from "react-icons/fa"
+import { useState } from 'react';
+import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopyright, FaDigitalTachograph, FaLink, FaPaintBrush, FaSortAlphaDown, FaSortDown } from "react-icons/fa"
 
 
 export default function Page() {
   const [showinfo1, setshowinfo1] = React.useState(true)
+  const [text,setText] = useState('')
+  const [links,setLinks] = useState([])
+   const [message,setMessage] = useState('')
+   const [buttonText,setButtonText] = useState('Copy')
+   const [Error,setError] = useState('')
+
 
   function displayinfo1() {
     setshowinfo1(prev => !prev)
@@ -33,6 +40,45 @@ export default function Page() {
   function displayinfo6() {
     setshowinfo6(prev => !prev)
   }
+
+
+  const handleInput = (e) => {
+  const data = e.target.value
+  setText(data)
+   
+ }
+
+ 
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+   
+ const option = {
+  method :'POST',
+  headers:{
+    'content-type':'application/json'
+  },
+  body:JSON.stringify({originalUrl: text})
+ }
+ try{ 
+  
+     const response = await fetch ('https://weblify.onrender.com/v1/urls/public',option);
+     const data = await response.json()
+     setLinks(data.data)
+     setText('')
+   }
+ 
+ catch( err){
+  console.log('Error in fetching data', err)
+ }
+ 
+};
+
+const handleCopy = () => {
+  navigator.clipboard.writeText(links.shortenedUrl)
+  setButtonText('Copied')
+}
+
+
   return (
     <div className='w-full'>
       <header className='bg-blue-600 flex justify-between items-center h-12 text text-white sm:h-14 md:h-14 xl:h-16 fixed w-full '>
@@ -57,11 +103,25 @@ export default function Page() {
           <div className=' lg:flex justify-center lg:gap-2'>  <h1 className='text-lg font-bold lg:text-xl xl:text-2xl'>Effortless URL Shortening For </h1><span className='text-lg font-bold text-blue-600 lg:text-xl xl:text-2xl '>Everyone.</span> </div>
           <p className='pt-1  text-md text-black font-semibold md:pt-1 lg:pt-4 md:text-lg xl:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
           <div className='flex  justify-center flex-col md:flex-row lg:px-72  md:px-44 lg:gap-10'>
+            <form onSubmit={ handleSubmit}>
             <input type='text' placeholder='Enter your long link here' className=' rounded-md outline-none m-auto pl-2 mt-2 md:mt-4 h-7 w-80 placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:h-9 lg:w-full ' />
-            <button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28'>shorten url</button>
+             sm:w-96 md:h-8 lg:h-9 lg:w-full ' value={text} onChange={handleInput} name='text' required />
+            <button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28'  type='submit' > Shorten url</button>
+            </form>
+            
           </div>
+          <div><h5 className=' '>{message}</h5></div>
+          <div className='flex  justify-center  ' >
+              <ul className='list-none'>
+              {links && links.shortenedUrl ? (
+              <li className='  bg-white mt-4 text-blue-600 font-bold pl-3 pr-3 rounded pt-1 pb-1 lg:pt-2 lg:pb-2 '  ><h6>{links.shortenedUrl}</h6></li>
+              ): null}
+              <li><button className= 'bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28' onClick={handleCopy}> {buttonText}</button></li>
+              </ul>
+            </div>
+            
           <p className='mt-2 text-sm md:text-base md:mt-6 md:mb-6 lg:mb-8 lg:text-lg'>By using this our url shortener you agree to our terms and condition</p>
+         
         </div>
 
         <p className='text-center mt-5 text-lg mb-5 sm:mb-10 sm:mt-7 lg:text-xl lg:mt-8 lg:mb-8'>Why <span className='font-bold'>weblify</span>?</p>
