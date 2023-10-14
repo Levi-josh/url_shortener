@@ -15,6 +15,9 @@ module.exports = {
       },
       borderWidth: {
         r: "0.1px"
+      },
+      minWidth: {
+        md2: '890px'
       }
     },
   },

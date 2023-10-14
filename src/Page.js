@@ -47,21 +47,21 @@ export default function Page() {
           <li>F&Q</li>
         </ul>
         <div className='flex gap-4'>
-          <button className='font-bold rounded-lg text-xs flex items-center justify-center h-6 w-12 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>log in</button>
-          <button className='font-bold rounded-lg mr-4 text-black bg-white text-xs flex items-center justify-center h-6 w-12 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>Sign up</button>
+          <button className='font-bold rounded-full text-xs flex items-center justify-center h-7 w-14 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>log in</button>
+          <button className='font-bold rounded-full mr-3 text-black bg-white text-xs flex items-center justify-center h-7 w-14 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>Sign up</button>
         </div>
       </header>
       <section>
 
-        <div className=' bg-newblue h-100 pt-24 text-center pb-10 sm:pt-28 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
-          <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
-          <p className='pt-6  text-base text-black font-semibold md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
-          <div className='flex  justify-center items-center flex-col md:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10  '>
-            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto pl-4 mt-3 md:mt-4 h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
+        <div className=' bg-newblue h-100 pt-24 text-center pb-10 sm:pt-32 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
+          <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
+          <p className='pt-1  text-base text-black font-semibold sm:pt-4 md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
+          <div className='flex  justify-center items-center flex-col md:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10 '>
+            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto pl-4 mt-3 sm:mt-4 md:mt-4 h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
              sm:w-96 md:h-8 lg:w-400 lg:h-9 xl:w-full xl:mt-6 xl:h-10' />
-            <button className='bg-blue-600 w-80 font-semibold m-auto mt-4 h-9 rounded-full text-lg text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8'>shorten url</button>
+            <button className='bg-blue-600 w-80 font-semibold m-auto mt-4 h-9 rounded-full text-lg text-white sm:mt-5 md:text-sm md:mt-4  lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8 sm:w-96'>shorten url</button>
           </div>
-          <p className='mt-3 text-sm md:text-base md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
+          <p className='mt-3 text-sm md:text-base sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
         </div>
 
         <p className='text-center mt-5 text-lg mb-5 sm:mb-10 sm:mt-7 lg:text-3xl lg:mt-8 lg:mb-8 '>Why <span className='font-bold'>weblify</span>?</p>
