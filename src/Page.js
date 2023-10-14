@@ -100,35 +100,30 @@ export default function Page() {
       <section>
 
 
+
+
+
         <div className=' bg-newblue h-100 pt-24 text-center pb-10 sm:pt-32 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
           <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
           <p className='pt-1  text-base text-black font-semibold sm:pt-4 md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
-          <div className='flex  justify-center flex-col md:flex-row lg:px-72  md:px-44 lg:gap-10'>
+          <div className='flex  justify-center items-center flex-col md:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10 '>
             <form onSubmit={handleSubmit}>
-              <input type='text' placeholder='Enter your long link here' className=' rounded-md outline-none m-auto pl-2 mt-2 md:mt-4 h-7 w-80 placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:h-9 lg:w-full ' value={text} onChange={handleInput} name='text' required />
-              <button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28' type='submit' > Shorten url</button>
+              <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto pl-4 mt-3 sm:mt-4 md:mt-4 h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
+             sm:w-96 md:h-8 lg:w-400 lg:h-9 xl:w-full xl:mt-6 xl:h-10' required name='text' onChange={handleInput} value={text} />
+              <button className='bg-blue-600 w-80 font-semibold m-auto mt-4 h-9 rounded-full text-lg text-white sm:mt-5 md:text-sm md:mt-4  lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8 sm:w-96' type='submit'>shorten url</button>
             </form>
 
+
+            <div className='flex  justify-center  ' >
+              <ul className='list-none'>
+                {links && links.shortenedUrl ? (
+                  <li className='  bg-white mt-4 text-blue-600 font-bold pl-3 pr-3 rounded pt-1 pb-1 lg:pt-2 lg:pb-2 '  ><h6>{links.shortenedUrl}</h6></li>
+                ) : null}
+                <li><button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28' onClick={handleCopy}> {buttonText}</button></li>
+              </ul>
+            </div>
+            <p className='mt-3 text-sm md:text-base sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
           </div>
-
-
-          <div className='flex  justify-center items-center flex-col md:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10 '>
-            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto pl-4 mt-3 sm:mt-4 md:mt-4 h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:w-400 lg:h-9 xl:w-full xl:mt-6 xl:h-10' />
-            <button className='bg-blue-600 w-80 font-semibold m-auto mt-4 h-9 rounded-full text-lg text-white sm:mt-5 md:text-sm md:mt-4  lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8 sm:w-96'>shorten url</button>
-          </div>
-
-          <div className='flex  justify-center  ' >
-            <ul className='list-none'>
-              {links && links.shortenedUrl ? (
-                <li className='  bg-white mt-4 text-blue-600 font-bold pl-3 pr-3 rounded pt-1 pb-1 lg:pt-2 lg:pb-2 '  ><h6>{links.shortenedUrl}</h6></li>
-              ) : null}
-              <li><button className='bg-blue-600 w-24 font-semibold m-auto mt-3 h-7 rounded-lg text-sm text-white md:mt-4 lg:mt-4 lg:h-8 lg:w-28' onClick={handleCopy}> {buttonText}</button></li>
-            </ul>
-          </div>
-          <p className='mt-3 text-sm md:text-base sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
-
         </div>
 
         <p className='text-center mt-5 text-lg mb-5 sm:mb-10 sm:mt-7 lg:text-3xl lg:mt-8 lg:mb-8 '>Why <span className='font-bold'>weblify</span>?</p>
