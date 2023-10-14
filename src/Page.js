@@ -106,6 +106,7 @@ export default function Page() {
 
         <div className=' bg-newblue h-100 pt-28 text-center pb-10 sm:pt-32 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
           <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
+
           <p className='pt-2  text-base text-black font-semibold sm:pt-4 md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
 
           <form onSubmit={handleSubmit} className='   flex  justify-center items-center flex-col md:flex-row xl:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10 '>
@@ -125,6 +126,8 @@ export default function Page() {
             </ul>
           </div>
           <p className='mt-3 text-sm md:text-base mb-4 sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
+
+
 
         </div>
 
