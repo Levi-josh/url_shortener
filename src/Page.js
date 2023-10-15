@@ -10,6 +10,7 @@ export default function Page() {
   const [message, setMessage] = useState('')
   const [buttonText, setButtonText] = useState(true)
   const [Error, setError] = useState({})
+  const [isloading, setloading] = useState(false)
 
 
   function displayinfo1() {
@@ -52,7 +53,9 @@ export default function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setloading(true)
+    setError("")
+    setLinks("")
     const option = {
       method: 'POST',
       headers: {
@@ -70,8 +73,9 @@ export default function Page() {
 
     catch (err) {
       setError(err)
-    }
 
+    }
+    setloading(false)
   };
 
   const handleCopy = () => {
@@ -120,9 +124,9 @@ export default function Page() {
             <ul className='list-none  flex flex-col md:flex-row items-center'>
               {links && links.shortenedUrl ? (
                 <div className=' mt-3 text-black  font-bold w-80   pt-1 pb-1 lg:pt-2 lg:pb-2 flex justify-center items-center gap-3'  ><p className='overflow-hidden'>{links.shortenedUrl}</p><FaCopy onClick={handleCopy} className={` text ${buttonText ? 'text-gray-500' : 'text-black'} text-lg `} /></div>
-              ) : null}
-              {Error.message ? <li className='mt-3 text-red-600 font-bold'>{`Error: ${Error.message}`}</li> : null}
-
+              ) :
+                Error.message ? <li className='mt-3 text-red-600 font-bold'>{`Error: ${Error.message}`}</li> : null}
+              {isloading ? <li className='mt-3 '>Loading <span className='  text-base font-bold  '> . . .</span></li> : null}
             </ul>
           </div>
           <p className='mt-3 text-sm md:text-base mb-4 sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
