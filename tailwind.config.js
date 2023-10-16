@@ -8,7 +8,9 @@ module.exports = {
       },
       width: {
         100: '500px',
-        200: '700px',
+        150: '520px',
+        200: '550px',
+        250: '580px',
         300: '950px',
         400: '1000px',
         120: '2000px'
@@ -18,7 +20,8 @@ module.exports = {
       },
       minWidth: {
         md2: '890px'
-      }
+      },
+
     },
   },
   plugins: [],

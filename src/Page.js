@@ -109,24 +109,24 @@ export default function Page() {
 
 
         <div className=' bg-newblue h-100 pt-28 text-center pb-10 sm:pt-32 lg:pt-40 xl:pt-44 md:pt-36 px-3'>
-          <div className=' lg:flex justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
+          <div className='md:flex md:gap-2 justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
 
-          <p className='pt-2  text-base text-black font-semibold sm:pt-4 md:pt-1 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
+          <p className='pt-2  text-base text-black font-semibold sm:pt-4 md:pt-5 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,marketing and more.</p>
 
-          <form onSubmit={handleSubmit} className='   flex  justify-center items-center flex-col md:flex-row xl:flex-row md:gap-5 lg:px-72 lg:gap-10 md:px-44 xl:gap-10 '>
-            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto px-4 mt-4 sm:mt-4 md:mt-4 h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:w-400 lg:h-9 xl:w-full xl:mt-6 xl:h-10' required name='text' onChange={handleInput} value={text} />
-            <button className='bg-blue-600 w-80 font-semibold m-auto mt-5 h-9 rounded-full text-lg text-white sm:mt-5 md:text-sm md:mt-4  lg:mt-4 lg:h-8 lg:w-48 xl:h-10 xl:mt-6 xl:text-lg md:w-28 md:h-8 sm:w-96' type='submit'>shorten url</button>
+          <form onSubmit={handleSubmit} className='justify-center   flex   items-center flex-col md:flex-row xl:flex-row  md:gap-5 lg: lg:gap-5 xl:gap-8 md mt-4 gap-5  md:mt-6 lg:mt-7'>
+            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto md:m-0  px-4    h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
+             sm:w-96 md:h-8 lg:w-200 lg:h-9 xl:w-250  xl:h-10 md:w-150' required name='text' onChange={handleInput} value={text} />
+            <button className='bg-blue-600 w-80 font-semibold m-auto md:m-0  h-9 rounded-full text-lg text-white  md:text-sm  lg:h-9 lg:w-40 xl:w-48 xl:h-10  lg:text-base xl:text-lg md:w-28 md:h-8 sm:w-96' type='submit'>shorten url</button>
           </form>
 
 
           <div className='flex  justify-center   ' >
             <ul className='list-none  flex flex-col md:flex-row items-center'>
               {links && links.shortenedUrl ? (
-                <div className=' mt-3 text-black  font-bold w-80   pt-1 pb-1 lg:pt-2 lg:pb-2 flex justify-center items-center gap-3'  ><p className='overflow-hidden'>{links.shortenedUrl}</p><FaCopy onClick={handleCopy} className={` text ${buttonText ? 'text-gray-500' : 'text-black'} text-lg `} /></div>
+                <div className=' mt-3 text-black  font-bold w-80 sm:w-96 md:w-full sm:mt-4 md:mt-5 lg:mt-6 xl:mt-7  flex justify-center items-center gap-3'  ><p className='overflow-hidden' >{links.shortenedUrl}</p><FaCopy onClick={handleCopy} className={`  ${buttonText ? ' text-gray-500' : 'text-black'} text-lg lg:text-xl md:cursor-pointer `} /></div>
               ) :
-                Error.message ? <li className='mt-3 text-red-600 font-bold'>{`Error: ${Error.message}`}</li> : null}
-              {isloading ? <li className='mt-3 '>Loading <span className='  text-base font-bold  '> . . .</span></li> : null}
+                Error.message ? <li className='mt-3 sm:mt-4 md:mt-5 lg:mt-6 xl:mt-7 text-red-600 font-bold sm:text-base md:text-lg '>{`Error: ${Error.message}`}</li> : null}
+              {isloading ? <li className='mt-3 sm:mt-4 md:mt-5 lg:mt-6 xl:mt-7 sm:text-base md:text-lg '>Loading <span className='  text-base font-bold  '> . . .</span></li> : null}
             </ul>
           </div>
           <p className='mt-3 text-sm md:text-base mb-4 sm:mt-4 sm:mb-5 md:mt-6 md:mb-6 lg:mb-8 lg:text-lg xl:mb-20 xl:text-xl'>By using this our url shortener you agree to our terms and condition</p>
