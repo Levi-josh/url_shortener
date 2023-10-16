@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        newblue: "#a7c7ec"
+        // newblue: "#a7c7ec"
+        newblue: ' #d0e6ff',
+        iconblue: '#4893e4',
       },
       width: {
         100: '500px',
