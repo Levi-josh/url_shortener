@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React,{useState} from "react";
 import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopy, FaCopyright, FaDigitalTachograph, FaLink, FaPaintBrush, FaSortAlphaDown, FaSortDown, } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom';
 
-
-export default function Page() {
+ function Page() {
   const [showinfo1, setshowinfo1] = React.useState(true)
   const [text, setText] = useState('')
   const [links, setLinks] = useState([])
@@ -11,6 +10,8 @@ export default function Page() {
   const [buttonText, setButtonText] = useState(true)
   const [Error, setError] = useState({})
   const [isloading, setloading] = useState(false)
+  const navigate = useNavigate()
+
 
 
   function displayinfo1() {
@@ -83,13 +84,21 @@ export default function Page() {
     setButtonText(prev => !prev)
   }
 
+  const handleLogin = () => {
+   navigate('Login')
+  }
+
+
+  const handleSignUp = () =>{
+    navigate('Signup')
+  }
 
   return (
     <div className='w-full'>
-      <header className='bg-blue-600 flex justify-between items-center h-14 text text-white sm:h-14 md:h-14 xl:h-16 fixed w-full '>
+      <header className='bg-blue-600 flex justify-between items-center h-14 text text-white sm:h-14 md:h-14 xl:h-16 lg:h-16 fixed w-full '>
         <div className='  border-white border-r-r h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
 
-          <h2 className='pl-3   border-white  sm:pl-5  md:pl-7 text-lg  lg:font-bold  lg:pl-16'>Weblify</h2>
+          <h2 className='pl-3   border-white  sm:pl-5  md:pl-7 text-lg  lg:font-bold lg:text-xl lg:pl-16'>Weblify</h2>
         </div>
         <ul className='hidden  '>
           <li>Home</li>
@@ -98,8 +107,8 @@ export default function Page() {
           <li>F&Q</li>
         </ul>
         <div className='flex gap-4'>
-          <button className='font-bold rounded-full text-xs flex items-center justify-center h-7 w-14 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>log in</button>
-          <button className='font-bold rounded-full mr-3 text-black bg-white text-xs flex items-center justify-center h-7 w-14 border-2 md:w-14 md:rounded-full md:text-sm lg:w-20 lg:h-7 lg:text-sm lg:rounded-full'>Sign up</button>
+          <button className='font-bold rounded-full text-xs flex items-center justify-center  px-4 py-2 border-2 md:px-6 md:rounded-full md:text-sm  lg:px-7 lg:py-2 xl:text-sm 2xl:px-5 2xl:py-2 xl:px-6 xl:py-2 lg:text-sm lg:rounded-full' onClick={handleLogin}>Log in</button>
+          <button className='font-bold rounded-full mr-3 text-black bg-white text-xs flex items-center justify-center md:px-4 lg:px-4 lg:py-2 md:py-2 px-3 py-2  border-2   md:rounded-full md:text-sm  xl:px-4  lg:text-sm lg:rounded-full' onClick={handleSignUp}>Sign Up</button>
         </div>
       </header>
       <section>
@@ -208,3 +217,5 @@ export default function Page() {
     </div>
   )
 }
+
+export default Page;

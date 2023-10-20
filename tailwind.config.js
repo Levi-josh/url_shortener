@@ -24,6 +24,10 @@ module.exports = {
         md2: '890px'
       },
 
+      top:{
+        88:'340px'
+      }
+
     },
   },
   plugins: [],
