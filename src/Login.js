@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate,useOutletContext, useLocation} from "react-router-dom";
 
 
 
 function Login() {
-
+  const [loading,setLoading] = useState(true)
   const [users, setUsers] = useState([])
   const [visibility, setVisibility] = useState(true)
   const [formValues, setFormValues] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
+  const location = useLocation()
+   const {showForm,setShowForm} =  useOutletContext()
   const handlevisibility = () => {
     setVisibility(prevstate => !prevstate)
   }
@@ -35,7 +37,9 @@ function Login() {
       const data = await response.json()
       setUsers(data)
       if (data?.data.id) { return navigate(`/?access=${data.data.accessToken}`) }
-
+ 
+     
+   
     }
 
     catch (err) {
@@ -56,12 +60,25 @@ function Login() {
 
   }
 
+  {/*useEffect(() => {
+    const unlisten = history.listen((location, action) => {
+      if(action === "POP" && location.pathname === '/Login'){
+        history.replace('/')
+      }
+    });
 
+    return() => {
+      unlisten()
+    }
+  },[history])
+*/}
 
 
   return (
-    <div className="flex items-center justify-center h-screen md:h-auto min-h-screen bg-white">
-
+    <>
+    {showForm ? (
+    <div className="flex items-center justify-center h-screen md:h-auto min-h-screen bg-white ">
+   
       <div className=" bg-newblue text-center pt-10 pb-10 md:mr-4  lg:mr-10 lg:px-8 lg:pb-12 md:py-12 lg:pt-12 md:px-4 relative  rounded-lg shadow-lg " >
         <h3 className="font-bold text-xl lg:text-2xl "> Sign In</h3>
         <form onSubmit={handleSubmit}>
@@ -80,7 +97,11 @@ function Login() {
         <h3 className="md:text-3xl font-bold text-2xl lg:text-4xl text-blue-600 mb-8  ">Weblify</h3>
         <p className="text-gray-800   text-lg">Effortlessly create short links for social <br /> media marketing and more.</p>
       </div>
+
+    
     </div>
+    ): null}
+    </>
   )
 }
 

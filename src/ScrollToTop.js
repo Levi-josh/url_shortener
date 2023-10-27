@@ -1,9 +1,13 @@
-import React,{useEffect} from "react";
+import React,{useState,useEffect} from "react";
+
 import { Outlet, useLocation } from "react-router-dom";
 
 
 
 function    ScrollToTop (){
+
+    const [showForm,setShowForm] = useState(true)
+
     const location = useLocation();
  useEffect(() =>{
   window.scrollTo(0,0);
@@ -12,7 +16,7 @@ function    ScrollToTop (){
 
     
 return (
-    <Outlet/>
+    <Outlet context={{showForm,setShowForm}} />
 )
 
 
