@@ -99,7 +99,7 @@ function Login() {
         <form onSubmit={handleSubmit}>
           {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" outline-none border-gray-300 border-2 rounded-lg sm:mt-10 pl-3  sm:w-96 w-80 px-1 py-1 mt-8 " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
-          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-10 mb-10 rounded-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
+          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-10 mb-10 rounded-lg" required name="password" maxLength={25} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute sm:bottom-36 bottom-32  sm:mb-10 sm:left-80 right-6 mb-10 sm:ml-12 text-gray-900" onClick={handlevisibility} />) :
             <FaEyeSlash className="absolute sm:bottom-36 bottom-32 mb-10 right-6 sm:mb-10 sm:left-80 sm:ml-12 text-gray-900" onClick={handlevisibility} />}
           
