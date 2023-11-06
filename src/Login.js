@@ -36,7 +36,7 @@ function Login() {
 
       const response = await fetch('https://weblify.onrender.com/v1/auth/login', option);
       const data = await response.json()
-      setUsers(data)
+      setUsers(data.data)
       if (data?.data.id) { return navigate(`/?access=${data.data.accessToken}`) }
  
       
@@ -140,7 +140,7 @@ function Login() {
         <form onSubmit={handleSubmit}>
           {error.message ? <h4 className="text-red-600 text-sm">{`Error : ${error.message}`}</h4> : null}
           <input type="email" placeholder="Email Address" className="  md:mt-16 md:mb-10 w-80 lg:mb-10 lg:mt-20 lg:w-100 md:w-96 pl-3 rounded-lg pt-1  pb-1 border-2 border-gray-300 outline-none lg:text-lg text-lg" required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
-          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="  md:mb-10   pt-1 rounded-lg w-80 lg:mb-10 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
+          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="  md:mb-10   pt-1 rounded-lg w-80 lg:mb-10 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={25} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute lg:right-12 lg:bottom-48  lg:mb-12 md:right-7  md:bottom-48  md:mb-5 text-gray-900" onClick={handlevisibility} />) :
             <FaEyeSlash className="absolute lg:right-12 md:bottom-48 md:right-7 md:mb-5 lg:mb-12  lg:bottom-48  text-gray-900" onClick={handlevisibility} />}
 

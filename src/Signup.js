@@ -34,7 +34,7 @@ function Signup() {
 
       const response = await fetch('https://weblify.onrender.com/v1/auth/register', option);
       const data = await response.json()
-      setUsers(data)
+      setUsers(data.data)
 
       if (data?.data.id) { return navigate("/?access=${data.data.accessToken}") }
     }
@@ -118,7 +118,7 @@ function Signup() {
         <form onSubmit={handleSubmit}>
           {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" md:mt-12 sm:mt-12 md:mb-10  lg:mb-10 pl-3 w-80  lg:w-100  md:w-96 pt-1 rounded-lg pb-1 border-2 border-gray-300 mb-10 outline-none text-lg " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
-          <input type={visibility ? 'password' : 'text'} placeholder="Password" className=" sm:mb-12 md:mb-10   pt-1 rounded-lg w-80 lg:mb-12 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
+          <input type={visibility ? 'password' : 'text'} placeholder="Password" className=" sm:mb-12 md:mb-10   pt-1 rounded-lg w-80 lg:mb-12 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={25} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute lg:right-12 lg:bottom-64  lg:mb-16 md:right-7  md:bottom-64 md:mb-7 text-gray-900" onClick={handlevisibility} />) :
             <FaEyeSlash className="absolute lg:right-12 md:bottom-64 md:right-7 md:mb-7 lg:mb-16  lg:bottom-64  text-gray-900" onClick={handlevisibility} />}
           <p className="text-gray-800 text-sm lg:text-lg lg:mb-10 mb-10">By Clicking on "Create Account", I Agree To Weblify's <span className="text-blue-500">Terms<br />& Condition</span> And <span className="text-blue-500">Privacy Policy</span></p>
