@@ -90,7 +90,7 @@ function Signup() {
 
   
     
-<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-20 w-20 md:w-11 sm:left-40 left-36 bottom-44 rotate-180 animate-spin "/></div>
+<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-20 w-20 md:w-11 sm:left-44 left-36 bottom-44 rotate-180 animate-spin "/></div>
 
 
 ):null}
@@ -130,7 +130,7 @@ function Signup() {
 
   
     
-<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-20 w-20 md:w-11 sm:left-40 left-36 bottom-44 rotate-180 animate-spin "/></div>
+<div className="  z-10   " ><FaSpinner className="md:h-20 absolute h-20 w-20 md:w-20 sm:left-40 left-36 lg:left-56 bottom-44 rotate-180 animate-spin "/></div>
 
 
 ):null}
