@@ -78,7 +78,7 @@ function Signup() {
         <form onSubmit={handleSubmit}>
           {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" outline-none border-gray-300 border-2 rounded-lg sm:mt-10 pl-3  sm:w-96 w-80 px-1 py-1 mt-8 " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
-          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-8 mb-10 rounded-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
+          <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-8 mb-10 rounded-lg" required name="password" maxLength={25} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute sm:bottom-56 bottom-56  sm:mb-8 sm:left-80 right-6 mb-3 sm:ml-12 text-gray-900" onClick={handlevisibility} />) :
             <FaEyeSlash className="absolute sm:bottom-56 bottom-56 mb-3 right-6 sm:mb-8 sm:left-80 sm:ml-12 text-gray-900" onClick={handlevisibility} />}
           <p className="text-gray-800 text-sm   mb-8">By Clicking on "Create Account", I Agree To <br/> Weblify's <span className="text-blue-500">Terms & Condition</span> And <span className="text-blue-500">Privacy Policy</span></p>
