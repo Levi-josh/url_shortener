@@ -26,7 +26,12 @@ module.exports = {
 
       top:{
         88:'340px'
-      }
+      },
+
+    left:{
+      70:'280px'
+    }
+
 
     },
   },

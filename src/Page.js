@@ -113,6 +113,12 @@ function Page() {
   })
  
   return (
+
+  
+
+
+
+
     <div className='w-full'>
       <header className='bg-blue-600 flex justify-between items-center h-14 text text-white sm:h-14 md:h-14 xl:h-16 lg:h-16 fixed w-full '>
         <div className='  border-white border-r-r h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
@@ -235,6 +241,10 @@ function Page() {
         <div className='flex justify-center items-center mt-5 xl:mt-8 xl:text-lg'> <FaCopyright /><p> copyright 2023.Weblify</p> </div>
       </footer>
     </div >
+
+
+
+    
   )
 }
 
