@@ -76,7 +76,7 @@ function Signup() {
       <div className=" bg-newblue text-center relative  rounded-lg shadow-lg mt-12 px-2 sm:px-4 md:hidden" >
         <h3 className="font-bold text-xl lg:text-2xl mt-8 sm:mt-10"> Create Account</h3>
         <form onSubmit={handleSubmit}>
-          {error.message ? <h4 className="text-red-600">{error.message}</h4> : null}
+          {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" outline-none border-gray-300 border-2 rounded-lg sm:mt-10 pl-3  sm:w-96 w-80 px-1 py-1 mt-8 " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
           <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-8 mb-10 rounded-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute sm:bottom-56 bottom-56  sm:mb-8 sm:left-80 right-6 mb-3 sm:ml-12 text-gray-900" onClick={handlevisibility} />) :
@@ -116,9 +116,9 @@ function Signup() {
       <div className=" bg-newblue text-center pt-10 pb-10 md:mr-4  lg:mr-10 lg:px-6 lg:pb-14 md:pt-14 md:pb-14 lg:pt-12 md:px-4 relative  rounded-lg shadow-lg hidden  md:block" >
         <h3 className="font-bold text-xl lg:text-2xl "> Create Account</h3>
         <form onSubmit={handleSubmit}>
-          {error.message ? <h4 className="text-red-600">{error.message}</h4> : null}
+          {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" md:mt-12 sm:mt-12 md:mb-10  lg:mb-10 pl-3 w-80  lg:w-100  md:w-96 pt-1 rounded-lg pb-1 border-2 border-gray-300 mb-10 outline-none text-lg " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
-          <input type={visibility ? 'password' : 'text'} placeholder="Password" className=" sm:mb-12 md:mb-10   pt-1 rounded-lg w-80 lg:mb-12 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
+          <input type={visibility ? 'password' : 'text'} placeholder="Password" className=" sm:mb-12 md:mb-10   pt-1 rounded-lg w-80 lg:mb-12 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={25} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute lg:right-12 lg:bottom-64  lg:mb-16 md:right-7  md:bottom-64 md:mb-7 text-gray-900" onClick={handlevisibility} />) :
             <FaEyeSlash className="absolute lg:right-12 md:bottom-64 md:right-7 md:mb-7 lg:mb-16  lg:bottom-64  text-gray-900" onClick={handlevisibility} />}
           <p className="text-gray-800 text-sm lg:text-lg lg:mb-10 mb-10">By Clicking on "Create Account", I Agree To Weblify's <span className="text-blue-500">Terms<br />& Condition</span> And <span className="text-blue-500">Privacy Policy</span></p>
