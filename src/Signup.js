@@ -61,6 +61,8 @@ function Signup() {
    <div>
    {showForm ? ( 
 
+    <div className="md:hidden block">
+
 <div  className="grid place-items-center h-full">
 <div className="text-center   md:hidden ">
         <h3 className=" font-bold text-3xl  text-blue-600 mb-4 mt-8  ">Weblify</h3>
@@ -92,8 +94,11 @@ function Signup() {
 
 
 ):null}
+
       </div>
-      
+
+      </div>
+
       </div>
 
 ):null}
@@ -103,6 +108,8 @@ function Signup() {
 
 
     {showForm ? (
+
+      <div className="hidden md:block">
 
     <div className="flex  items-center  justify-center h-screen md:h-auto min-h-screen bg-white">
 
@@ -136,7 +143,7 @@ function Signup() {
 
       </div>
 
-
+      </div>
  
 ):null}
      
