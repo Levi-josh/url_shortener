@@ -97,7 +97,7 @@ function Login() {
       <div className=" bg-newblue text-center relative  rounded-lg shadow-lg mt-12 px-2 sm:px-4 visible md:hidden " >
         <h3 className="font-bold text-xl lg:text-2xl mt-8 sm:mt-10"> Sign In</h3>
         <form onSubmit={handleSubmit}>
-          {error.message ? <h4 className="text-red-600">{error.message}</h4> : null}
+          {error.message ? <h4 className="text-red-600 text-sm">{error.message}</h4> : null}
           <input type="email" placeholder="Email Address" className=" outline-none border-gray-300 border-2 rounded-lg sm:mt-10 pl-3  sm:w-96 w-80 px-1 py-1 mt-8 " required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
           <input type={visibility ? 'password' : 'text'} placeholder="Password" className="border-gray-300 right-6 border-2 sm:w-96 w-80 pl-3 outline-none px-1 py-1 mt-10 mb-10 rounded-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute sm:bottom-36 bottom-32  sm:mb-10 sm:left-80 right-6 mb-10 sm:ml-12 text-gray-900" onClick={handlevisibility} />) :
@@ -138,7 +138,7 @@ function Login() {
       <div className=" bg-newblue text-center pt-10 pb-10 md:mr-4  lg:mr-10 lg:px-8 lg:pb-12 md:py-12 lg:pt-12 md:px-4 relative hidden md:block  rounded-lg shadow-lg " >
         <h3 className="font-bold text-xl lg:text-2xl "> Sign In</h3>
         <form onSubmit={handleSubmit}>
-          {error.message ? <h4 className="text-red-600">{`Error : ${error.message}`}</h4> : null}
+          {error.message ? <h4 className="text-red-600 text-sm">{`Error : ${error.message}`}</h4> : null}
           <input type="email" placeholder="Email Address" className="  md:mt-16 md:mb-10 w-80 lg:mb-10 lg:mt-20 lg:w-100 md:w-96 pl-3 rounded-lg pt-1  pb-1 border-2 border-gray-300 outline-none lg:text-lg text-lg" required value={formValues.email} name="email" onChange={handleFormChanges} /> <br />
           <input type={visibility ? 'password' : 'text'} placeholder="Password" className="  md:mb-10   pt-1 rounded-lg w-80 lg:mb-10 lg:w-100  md:w-96 pb-1 pl-3 border-2 border-gray-300 outline-none text-lg" required name="password" maxLength={12} value={formValues.password} onChange={handleFormChanges} /> <br />
           {visibility ? (<FaEye className="absolute lg:right-12 lg:bottom-48  lg:mb-12 md:right-7  md:bottom-48  md:mb-5 text-gray-900" onClick={handlevisibility} />) :
