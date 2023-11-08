@@ -1,6 +1,5 @@
-import './App.css';
 import React from 'react';
-import { Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import {  Route, Routes, RouterProvider,createBrowserRouter,createRoutesFromElements } from "react-router-dom";
 import Signup from './Signup'
 import Page from './Page';
 import ScrollToTop from './ScrollToTop';

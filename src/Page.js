@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopy, FaCopyright, FaDigitalTachograph, FaLink, FaPaintBrush, FaSortAlphaDown, FaSortDown, } from "react-icons/fa"
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams,useOutletContext } from 'react-router-dom';
 
 function Page() {
-  const [showinfo1, setshowinfo1] = React.useState(true)
+  const [showinfo1, setshowinfo1] = useState(true)
   const [text, setText] = useState('')
   const [links, setLinks] = useState([])
   const [message, setMessage] = useState('')
@@ -15,6 +15,10 @@ function Page() {
   const [search, setsearch] = useSearchParams()
   const [access, setaccess] = useState("")
 
+
+
+
+  const {showForm,setShowForm} = useOutletContext()
 
 
   function displayinfo1() {
@@ -98,8 +102,23 @@ function Page() {
   const handleSignUp = () => {
     navigate('Signup')
   }
-  console.log(access)
+
+  
+  
+  window.addEventListener('popstate', function(event){
+    if(document.location.pathname === '/Login'){
+      setShowForm(false)
+      window.location.replace('/')
+    }
+  })
+ 
   return (
+
+  
+
+
+
+
     <div className='w-full'>
       <header className='bg-blue-600 flex justify-between items-center h-14 text text-white sm:h-14 md:h-14 xl:h-16 lg:h-16 fixed w-full '>
         <div className='  border-white border-r-r h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
@@ -222,6 +241,10 @@ function Page() {
         <div className='flex justify-center items-center mt-5 xl:mt-8 xl:text-lg'> <FaCopyright /><p> copyright 2023.Weblify</p> </div>
       </footer>
     </div >
+
+
+
+    
   )
 }
 
