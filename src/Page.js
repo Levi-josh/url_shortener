@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopy, FaCopyright, FaDigitalTachograph, FaLink, FaPaintBrush, FaSortAlphaDown, FaSortDown, } from "react-icons/fa"
-import { useLocation, useNavigate, useSearchParams,useOutletContext } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams, useOutletContext } from 'react-router-dom';
 
 function Page() {
   const [showinfo1, setshowinfo1] = useState(true)
@@ -18,7 +18,7 @@ function Page() {
 
 
 
-  const {showForm,setShowForm} = useOutletContext()
+  const { showForm, setShowForm } = useOutletContext()
 
 
   function displayinfo1() {
@@ -59,6 +59,7 @@ function Page() {
   }
   useEffect(() => {
     setaccess(search.get("access"))
+    console.log(access)
 
   }, [])
 
@@ -103,18 +104,19 @@ function Page() {
     navigate('Signup')
   }
 
-  
-  
-  window.addEventListener('popstate', function(event){
-    if(document.location.pathname === '/Login'){
+
+
+  window.addEventListener('popstate', function (event) {
+    if (document.location.pathname === '/Login') {
       setShowForm(false)
       window.location.replace('/')
     }
   })
- 
+
+
   return (
 
-  
+
 
 
 
@@ -138,7 +140,7 @@ function Page() {
           </div>}
       </header>
       <section>
-        
+
 
 
 
@@ -198,27 +200,27 @@ function Page() {
           </div>
           <div className='mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 '>
             <div className='mt-10'>
-              <div className='flex justify-between  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{showinfo1 ? <FaChevronCircleDown onClick={displayinfo1} className='text-sm sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo1} className='text-iconblue text-sm sm:text-base lg:text-xl' />}</div>
-              <div className='border-b-r border-iconblue overflow-hidden '><p className={`xl:text-lg mb-2 ${showinfo1 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`}>A url shortener,like weblify,is a web application that transforms long URLs into shorter,unique, and Customizable links for easy sharing and tracking.</p></div>
+              <div className='flex justify-between  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{showinfo1 ? <FaChevronCircleDown onClick={displayinfo1} className='text-sm sm:text-base lg:text-xl text-iconblue hover:cursor-pointer ' /> : <FaChevronCircleUp onClick={displayinfo1} className='text-iconblue text-sm sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              <div className='border-b-r border-iconblue overflow-hidden transition-transform  '><p className={`xl:text-lg mb-2 ${showinfo1 ? '-translate-y-20 hidden  ' : '-translate-y- 20 '}`}>A url shortener,like weblify,is a web application that transforms long URLs into shorter,unique, and Customizable links for easy sharing and tracking.</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2 mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{showinfo2 ? <FaChevronCircleDown onClick={displayinfo2} className='text-sm sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo2} className='text-iconblue text-sm sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2 mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{showinfo2 ? <FaChevronCircleDown onClick={displayinfo2} className='text-sm sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp onClick={displayinfo2} className='text-iconblue text-sm sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
               <div className='border-b-r border-iconblue'><p className={`xl:text-lg mb-2 ${showinfo2 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`} >To use weblify,you can simply enter any valid URL in a provided form field.The application will generate a shortened version of the link that you can easily copy and paste.</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{showinfo3 ? <FaChevronCircleDown onClick={displayinfo3} className='text-sm sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo3} className='text-iconblue text-sm sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{showinfo3 ? <FaChevronCircleDown onClick={displayinfo3} className='text-sm sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp onClick={displayinfo3} className='text-iconblue text-sm sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
               <div className='border-b-r border-iconblue'><p className={`xl:text-lg mb-2 ${showinfo3 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`}>yes,with weblify,you can customize your shortened URLs to make them more memorable or relevant</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Are there analytics available for my short links?</p>{showinfo4 ? <FaChevronCircleDown onClick={displayinfo4} className='sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo4} className='text-iconblue sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2  mt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Are there analytics available for my short links?</p>{showinfo4 ? <FaChevronCircleDown onClick={displayinfo4} className='sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp onClick={displayinfo4} className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
               <div className='border-b-r border-iconblue'><p className={`xl:text-lg mb-2 ${showinfo4 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`}>Weblify provides analytics,allowing you to track the number of clicks and other insights for each shortened URL through your dashboard.</p></div>
             </div>
             <div>
-              <div className='flex justify-between  pb-2  mt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>Is there a limit to the number of links i can shorten?</p>{showinfo5 ? <FaChevronCircleDown onClick={displayinfo5} className='text-lg sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo5} className='text-iconblue text-lg sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between  pb-2  mt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>Is there a limit to the number of links i can shorten?</p>{showinfo5 ? <FaChevronCircleDown onClick={displayinfo5} className='text-lg sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp onClick={displayinfo5} className='text-iconblue text-lg sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
               <div className='border-b-r border-iconblue'><p className={`xl:text-lg mb-2 ${showinfo5 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`} >No,ther is no limit to the number of URLs you can shorten using weblify.</p></div>
             </div>
             <div>
-              <div className='flex justify-between pb-2  mt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>How long are my shorts links generated by your platform?</p>{showinfo6 ? <FaChevronCircleDown onClick={displayinfo6} className='text-xl sm:text-base lg:text-xl text-iconblue' /> : <FaChevronCircleUp onClick={displayinfo6} className='text-iconblue text-xl sm:text-base lg:text-xl' />}</div>
+              <div className='flex justify-between pb-2  mt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>How long are my shorts links generated by your platform?</p>{showinfo6 ? <FaChevronCircleDown onClick={displayinfo6} className='text-xl sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp onClick={displayinfo6} className='text-iconblue text-xl sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
               <div className='border-b-r border-iconblue'><p className={`xl:text-lg mb-2 ${showinfo6 ? '-translate-y-20 hidden ' : '-translate-y- 20'}`} >The shortened URLs will follow the format:https://weblify.onrender.com/v1/urls/sh/id where id is a randomly generated alphanumeric string of 6 characters.Additionally,for Customizable URLs,the format will be https://weblify.onrender.com/v1/urls/sh/text,where text is a user defined alphanumeric string</p></div>
             </div>
           </div>
@@ -244,7 +246,7 @@ function Page() {
 
 
 
-    
+
   )
 }
 

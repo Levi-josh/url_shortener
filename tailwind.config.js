@@ -24,13 +24,17 @@ module.exports = {
         md2: '890px'
       },
 
-      top:{
-        88:'340px'
+      top: {
+        88: '340px'
       },
 
-    left:{
-      70:'280px'
-    }
+      left: {
+        70: '280px'
+      },
+      transitionDuration: {
+        100: "10s"
+      },
+      
 
 
     },
