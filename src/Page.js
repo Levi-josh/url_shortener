@@ -73,7 +73,7 @@ function Page() {
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ originalUrl: text })
+      body: JSON.stringify({ originalUrl : text})
     }
     try {
 
@@ -105,13 +105,6 @@ function Page() {
   }
 
 
-
-  window.addEventListener('popstate', function (event) {
-    if (document.location.pathname === '/Login') {
-      setShowForm(false)
-      window.location.replace('/')
-    }
-  })
 
 
   return (
@@ -152,7 +145,7 @@ function Page() {
 
           <form onSubmit={handleSubmit} className='justify-center   flex   items-center flex-col md:flex-row xl:flex-row  md:gap-5 lg: lg:gap-5 xl:gap-5 md mt-4 gap-5  md:mt-8 lg:mt-10'>
             <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto md:m-0  px-4    h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96 md:h-8 lg:w-200 lg:h-9 xl:w-250  xl:h-10 md:w-150' required name='text' onChange={handleInput} value={text} />
+             sm:w-96 md:h-8 lg:w-200 lg:h-9 xl:w-250  xl:h-10 md:w-150' required name='text' autoComplete="off" onChange={handleInput} value={text} />
             <button className='bg-blue-600 w-80 font-semibold m-auto md:m-0  h-9 rounded-full text-lg text-white  md:text-sm  lg:h-9 lg:w-40 xl:w-48 xl:h-10  lg:text-base xl:text-lg md:w-28 md:h-8 sm:w-96' type='submit'>shorten url</button>
           </form>
 
