@@ -4,10 +4,13 @@ import Signup from './Signup'
 import Page from './Page';
 import ScrollToTop from './ScrollToTop';
 import Login from './Login';
-
+import DashBoardHome from './DashBoardHome';
 import Apitest from './Apitest';
+import DashBoard from './DashBoard';
 
 const router = createBrowserRouter(createRoutesFromElements(
+<>
+
 
   <Route path='/' element={<ScrollToTop />} >
 
@@ -15,8 +18,18 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='Signup' element={<Signup />} />
     <Route path='Login' element={<Login />} />
     <Route path='test' element={<Apitest />} />
+   
+
+
+   <Route path='DashBoardHome' element={<DashBoardHome/>} >
+   <Route path='DashBoard' element={<DashBoard/>}/>
+   </Route>
+
   </Route>
 
+
+
+  </>
 ))
 
 function App() {

@@ -36,9 +36,10 @@ function Login() {
 
       const response = await fetch('https://weblify.onrender.com/v1/auth/login', option);
       const data = await response.json()
+      
       setUsers(data.data)
-      if (data?.data) { return navigate(`/?access=${data.data.accessToken}`) }
-
+      if (data?.data) { return navigate ('/DashBoardHome/DashBoard') }
+   
 
     }
 
@@ -50,6 +51,16 @@ function Login() {
     setFormValues('')
 
   };
+
+
+
+
+
+  
+
+
+  //(`?${data.data.accessToken}`)
+  //
 
 
   const handleFormChanges = (e) => {
@@ -113,7 +124,7 @@ function Login() {
 
 
 
-                <div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-20 w-20 md:w-11 sm:left-40 left-32 bottom-44 rotate-180 animate-spin " /></div>
+                <div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-14 w-14 md:w-11 sm:left-40 left-36 bottom-44 rotate-180 animate-spin " /></div>
 
 
               ) : null}
