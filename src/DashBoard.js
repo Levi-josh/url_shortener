@@ -38,7 +38,6 @@ const handleLogout = async () => {
     headers: {
       'content-type': 'application/json',
       'Authorization': `Bearer ${accesstoken} `
-     
     },
  
   }
@@ -99,25 +98,6 @@ useEffect(() => {
 }, []);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const handleSubmit = async (e) => {
     e.preventDefault();
     setloading(true)
@@ -125,8 +105,6 @@ const handleSubmit = async (e) => {
     setError("")
     setLinks("")
     
-     
-
     const option = {
       method: 'POST',
 
@@ -209,16 +187,16 @@ window.addEventListener('popstate', function (event) {
 
 
 <div className={`${!handleChange ? "fixed pt-14 top-20 w-52 duration-500 ease-out  mr-80 transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen" : " bg-white   duration-500 left-0 ease-out  transition-all fixed pt-14 w-0 top-20  overflow-x-hidden  lg:hidden  shadow-2xl pl-2 z-10 shadow-blue-300 h-screen" }`}>
-    <div className="flex mb-14">
-        <img src={Scanner} className="w-6 h-6 mr-2" />
- <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold' >Dashboard</NavLink> 
-
+  <div className="flex mb-14">
+  <img src={Scanner} className="w-6 h-6 mr-2" />
+ <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold active:text-blue-300' >Dashboard</NavLink> 
+ <img src={Arrow} className="w-5 h-6 ml-12 mt-1"/>
  </div>
 
  <div className="flex w-full">
  <img src={Scanner1}  className="w-6 h-6 mr-2" />
- <NavLink to='/'className='text-xl font-bold hover:text-blue-500 active:text-blue-300' >Analytics</NavLink>
- <img src={Arrow} className="w-5 h-6 ml-12 mt-1"/> 
+ <NavLink to='/DashBoardHome/Analytics'className='text-xl font-bold hover:text-blue-500 ' >Analytics</NavLink>
+  
  </div>
 
 
@@ -240,16 +218,15 @@ window.addEventListener('popstate', function (event) {
 
 
 <div className= "fixed pt-20 w-52 top-20 bg-white shadow-2xl pl-2   shadow-blue-300 h-screen lg:block hidden" >
-    <div className="flex  mb-14">
-        <img src={Scanner} className="w-6 h-6 mr-2" />
- <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold' >Dashboard</NavLink> 
-
+  <div className="flex  mb-14">
+  <img src={Scanner} className="w-6 h-6 mr-2" />
+ <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold text-blue-500' >Dashboard</NavLink> 
+ <img src={Arrow} className="w-5 h-6 ml-12 mt-1"/>
  </div>
 
  <div className="flex w-full">
  <img src={Scanner1}  className="w-6 h-6 mr-2" />
- <NavLink to='/'className='text-xl font-bold  text-blue-500' >Analytics</NavLink>
- <img src={Arrow} className="w-5 h-6 ml-12 mt-1"/> 
+ <NavLink to='/DashBoardHome/Analytics'className='text-xl font-bold  ' >Analytics</NavLink>
  </div>
 
 

@@ -7,25 +7,27 @@ import Login from './Login';
 import DashBoardHome from './DashBoardHome';
 import Apitest from './Apitest';
 import DashBoard from './DashBoard';
+import Analytics from './Analytics';
 
 const router = createBrowserRouter(createRoutesFromElements(
-<>
+  <>
 
 
-  <Route path='/' element={<ScrollToTop />} >
+    <Route path='/' element={<ScrollToTop />} >
 
-    <Route index element={<Page />} />
-    <Route path='Signup' element={<Signup />} />
-    <Route path='Login' element={<Login />} />
-    <Route path='test' element={<Apitest />} />
-   
+      <Route index element={<Page />} />
+      <Route path='Signup' element={<Signup />} />
+      <Route path='Login' element={<Login />} />
+      <Route path='test' element={<Apitest />} />
 
 
-   <Route path='DashBoardHome' element={<DashBoardHome/>} >
-   <Route path='DashBoard' element={<DashBoard/>}/>
-   </Route>
 
-  </Route>
+      <Route path='DashBoardHome' element={<DashBoardHome />} >
+        <Route path='DashBoard' element={<DashBoard />} />
+        <Route path='Analytics' element={<Analytics />} />
+      </Route>
+
+    </Route>
 
 
 

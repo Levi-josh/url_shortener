@@ -38,9 +38,7 @@ function Login() {
       const data = await response.json()
       
       setUsers(data.data)
-      if (data?.data) { return navigate ('/DashBoardHome/DashBoard') }
-   
-
+      if (data?.data) { return navigate ('/DashBoardHome/DashBoard')}
     }
 
     catch (err) {
