@@ -5,6 +5,7 @@ import Arrow from './Images/Polygon 1.png';
 import Scanner from './Images/Qrcode 1.png';
 import { useOutletContext } from "react-router-dom";
 import Scanner1 from './Images/Vector (Stroke).png';
+import Logout from './Images/Vector (9).png'
 
 const Analytics = () => {
     const {handleChange,setHandleChange,showForm,setShowForm} = useOutletContext()
@@ -18,7 +19,7 @@ const Analytics = () => {
             </header> */}
 
 
-            <div className={`${!handleChange ? "fixed pt-14 w-52 top-20  duration-500 ease-out  transition-all  bg-white shadow-xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen" : "duration-500 left-0 ease-out  transition-all fixed pt-14 w-0   overflow-x-hidden  lg:hidden bg-white shadow-xl pl-2 z-10 shadow-blue-300 h-screen"}`}>
+            <div className={`fixed pt-14 top-14  w-52 duration-500 ease-out transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen ${!handleChange ? 'duration-500 ease-in-out block' : 'duration-500 ease-in-out hidden'}   lg:hidden  h-screen}`}>
                 <div className="flex mb-14">
                 <img src={Scanner} className="w-6 h-6 mr-2" />
                     <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold' >Dashboard</NavLink>
@@ -31,9 +32,11 @@ const Analytics = () => {
                     <img src={Arrow} className="w-5 h-6 ml-12 mt-1"/> 
                 </div>
 
-                <div>
+                <div className="flex bottom-44 ml-4 absolute cursor-pointer" >
+                <img src={Logout} className="h-4 w-4 mt-1.5" />
+                <p className="text-red-500 font-bold ml-1 text-lg">Log Out</p>
 
-                </div>
+</div>
 
             </div>
 
@@ -54,7 +57,7 @@ const Analytics = () => {
                 </div>
 
             </div>
-            <div className=' lg:ml-60  '>
+            <div className=' lg:ml-60 sm:px-6 px-4  '>
                 <h1 className='lg:hidden w-110  m-auto mt-10 font-bold text-xl sm:w-140'> Analytics</h1>
                 <p className='w-110  m-auto mt-12 text-lg mb-3 lg:mt-8 lg:w-22 sm:w-140 lg:m-0 lg:mb-3 lg:text-xl font-medium'>shorturl1ttt</p>
 

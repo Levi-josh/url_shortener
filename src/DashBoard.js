@@ -186,7 +186,7 @@ window.addEventListener('popstate', function (event) {
 
 
 
-<div className={`${!handleChange ? "fixed pt-14 top-20 w-52 duration-500 ease-out  mr-80 transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen" : " bg-white   duration-500 left-0 ease-out  transition-all fixed pt-14 w-0 top-20  overflow-x-hidden  lg:hidden  shadow-2xl pl-2 z-10 shadow-blue-300 h-screen" }`}>
+<div className={`fixed pt-14 top-14  w-52 duration-500 ease-out transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen ${!handleChange ? 'duration-500 ease-in-out block' : 'duration-500 ease-in-out hidden'}   lg:hidden  h-screen}`}>
   <div className="flex mb-14">
   <img src={Scanner} className="w-6 h-6 mr-2" />
  <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold active:text-blue-300' >Dashboard</NavLink> 
@@ -217,7 +217,7 @@ window.addEventListener('popstate', function (event) {
 
 
 
-<div className= "fixed pt-20 w-52 top-20 bg-white shadow-2xl pl-2   shadow-blue-300 h-screen lg:block hidden" >
+<div className= "fixed pt-20 w-52 top-16 bg-white shadow-2xl pl-2   shadow-blue-300 h-screen lg:block hidden" >
   <div className="flex  mb-14">
   <img src={Scanner} className="w-6 h-6 mr-2" />
  <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold text-blue-500' >Dashboard</NavLink> 
@@ -260,11 +260,11 @@ window.addEventListener('popstate', function (event) {
   
 
 <input type='text' placeholder='Enter your long link here' className=' rounded-lg outline-none  m-auto mb-5 md:text-start  border-2 border-blue-300 md:pt-3  text-center md:pb-3  md:pl-6 pt-2 pb-2  shadow-2xl   w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96   md:w-100   ' required name='text' autoComplete="off" onChange={handleInput} value={text} /> <br/>
+sm:w-96   md:w-100   ' required name='text' autoComplete="off" onChange={handleInput} value={text} /> <br/>
 
 
 <input type='text' placeholder='Enter your customize text' className=' rounded-lg outline-none m-auto md:text-start  border-2 border-blue-300 md:pt-3  text-center md:pb-3  md:pl-6 pt-2 pb-2  shadow-2xl   w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
-             sm:w-96   md:w-100  ' required name='text' autoComplete="off" onChange={customInput} value={customtext} /><br/>
+ sm:w-96   md:w-100  ' required name='text' autoComplete="off" onChange={customInput} value={customtext} /><br/>
 
  <button className='bg-blue-600 w-80 font-semibold lg:mt-10  md:w-36 m-auto mt-4    rounded-lg text-lg text-white  md:text-lg   lg:w-36  lg:pt-3 lg:pb-3  lg:text-base xl:text-lg md:pt-2 md:mt-5    md:pb-2 pt-1 pb-1 sm:w-96' type='submit'>shorten url</button>
  {loading ? <p className='mt-3 sm:mt-4 md:mt-4 lg:mt-4 xl:mt-4 sm:text-base md:text-lg '> Loading <span className='text-base font-bold'> . . .</span></p> :  null}      

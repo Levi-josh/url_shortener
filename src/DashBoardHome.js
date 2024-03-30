@@ -17,7 +17,7 @@ function DashBoardHome () {
 
 
     return (
-        <div className="lg:pt-20 ">
+        <div className="lg:pt-20 pt-16 ">
 
        <DashBoardHeader handleChange={handleChange} setHandleChange={setHandleChange}/>
        <Outlet context={{handleChange,setHandleChange,setShowForm,showForm}} />
