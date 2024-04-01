@@ -41,6 +41,9 @@ module.exports = {
         100 : '590px',
         120: '680px'
       },
+      height:{
+        110:'50vh'
+      }
       
 
 

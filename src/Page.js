@@ -3,7 +3,7 @@ import { FaBars, FaChartBar, FaChevronCircleDown, FaChevronCircleUp, FaCopy, FaC
 import { useLocation, useNavigate, useSearchParams, useOutletContext } from 'react-router-dom';
 
 function Page() {
-  const [showinfo1, setshowinfo1] = useState(true)
+  const [showinfo1, setshowinfo1] = useState(false)
   const [text, setText] = useState('')
   const [links, setLinks] = useState([])
   const [message, setMessage] = useState('')
@@ -14,7 +14,7 @@ function Page() {
   const location = useLocation()
   const [search, setsearch] = useSearchParams()
   const [access, setaccess] = useState("")
-
+  const [accordion,setaccordion]=useState([{showinfo11:false,id:1},{showinfo11:false,id:2},{showinfo11:false,id:3},{showinfo11:false,id:4},{showinfo11:false,id:5},{showinfo11:false,id:6}])
 
 
 
@@ -50,7 +50,11 @@ function Page() {
     setshowinfo6(prev => !prev)
   }
 
-
+  const showaccordion = (id)=>{
+  console.log(id)
+  setaccordion(prev=>prev.map(prev=>prev.id===id?{...prev,showinfo11:!prev.showinfo11}:{...prev,showinfo11:false}))
+  }
+ console.log(accordion)
   const handleInput = (e) => {
     const data = e.target.value
     setText(data)
@@ -115,22 +119,21 @@ function Page() {
 
 
     <div className='w-full'>
-      <header className='bg-blue-600 flex justify-between items-center h-14 text text-white sm:h-14 md:h-14 xl:h-16 lg:h-16 fixed w-full '>
+      <header className='bg-blue-600 flex justify-between items-center h-14 text text-white  lg:h-16 fixed w-full '>
         <div className='  border-white border-r-r h-full flex items-center w-20 sm:w-24 md: w-30 lg:w-40'>
 
           <h2 className='pl-3   border-white  sm:pl-5  md:pl-7 text-lg  lg:font-bold lg:text-xl lg:pl-16'>Weblify</h2>
         </div>
-        <ul className={`${access ? 'hidden md:flex m-auto md:gap-28 md:text-base lg:text-lg lg:gap-36' : 'hidden'}`}>
+        <ul className={`hidden lg:flex m-auto md:gap-28 md:text-base lg:text-lg lg:gap-36`}>
           <li>Home</li>
           <li>About</li>
           <li>Services</li>
           <li>F&Q</li>
         </ul>
-        {access ? <FaBars className="mr-5 sm:mr-8 text-lg md:hidden" /> :
-          <div className='flex gap-4'>
+        <div className='flex gap-4'>
             <button className='font-bold rounded-full text-xs flex items-center justify-center  px-4 py-2 border-2 md:px-6 md:rounded-full md:text-sm  lg:px-7 lg:py-2 xl:text-sm 2xl:px-5 2xl:py-2 xl:px-6 xl:py-2 lg:text-sm lg:rounded-full' onClick={handleLogin}>Log in</button>
             <button className='font-bold rounded-full mr-3 text-black bg-white text-xs flex items-center justify-center md:px-4 lg:px-4 lg:py-2 md:py-2 px-3 py-2  border-2   md:rounded-full md:text-sm  xl:px-4  lg:text-sm lg:rounded-full' onClick={handleSignUp}>Sign Up</button>
-          </div>}
+        </div>
       </header>
       <section>
 
@@ -139,12 +142,12 @@ function Page() {
 
 
         <div className=' bg-newblue h-100 pt-28 text-center pb-10 sm:pt-32 lg:pt-40 xl:pt-44 md:pt-36 '>
-          <div className='md:flex md:gap-2 justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone.</span> </div>
+          <div className='md:flex md:gap-2 justify-center lg:gap-3'>  <h1 className='text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Effortless URL Shortening For </h1><span className='text-xl sm:text-2xl font-bold text-blue-600 lg:text-4xl xl:text-5xl md:text-3xl '>Everyone</span> </div>
 
           <p className='pt-2  text-base text-black  sm:pt-4 md:pt-5 lg:pt-6 xl:pt-6 md:text-lg xl:text-2xl lg:text-xl'>Effortlessly create short links for social media,<span className='flex flex-col'>marketing and more.</span></p>
 
           <form onSubmit={handleSubmit} className='justify-center   flex   items-center flex-col md:flex-row xl:flex-row  md:gap-5 lg: lg:gap-5 xl:gap-5 md mt-4 gap-5  md:mt-8 lg:mt-10'>
-            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto md:m-0  px-4    h-9 w-80 text-lg placeholder:text-black  placeholder:text-center md:placeholder:text-start
+            <input type='text' placeholder='Enter your long link here' className=' rounded-full outline-none m-auto md:m-0  px-4    h-9 w-80 text-lg placeholder:text-black  placeholder:text-center placeholder:text-base lg:placeholder:text-lg md:placeholder:text-start
              sm:w-96 md:h-8 lg:w-200 lg:h-9 xl:w-250  xl:h-10 md:w-150' required name='text' autoComplete="off" onChange={handleInput} value={text} />
             <button className='bg-blue-600 w-80 font-semibold m-auto md:m-0  h-9 rounded-full text-lg text-white  md:text-sm  lg:h-9 lg:w-40 xl:w-48 xl:h-10  lg:text-base xl:text-lg md:w-28 md:h-8 sm:w-96' type='submit'>shorten url</button>
           </form>
@@ -192,29 +195,29 @@ function Page() {
             <p className='text-base font-semibold xl:text-lg xl:mt-2'>Frequently asked questions</p>
           </div>
           <div className='mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 '>
-            <div className='mt-10 cursor-pointer border-b-r border-iconblue  'onClick={displayinfo1}>
-              <div className='flex justify-between items-start  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{showinfo1 ? <FaChevronCircleDown className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer ' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-              {showinfo1&&<div className='   '><p className={`text-sm sm:text-base mb-2  `}>A url shortener,like weblify,is a web application that transforms long URLs into shorter,unique, and Customizable links for easy sharing and tracking.</p></div>}
+            <div className='mt-10 cursor-pointer border-b-r border-iconblue  'onClick={()=>showaccordion(accordion[0].id)}>
+              <div className='flex justify-between items-start  pb-2'>  <p className='text-base font-medium sm:text-base md:text-lg'>What is a URL shortener?</p>{accordion[0].showinfo11 ? <FaChevronCircleDown className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer ' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              {accordion[0].showinfo11&&<div className='  '><p className={`text-sm sm:text-base mb-2  `}>A url shortener,like weblify,is a web application that transforms long URLs into shorter,unique, and Customizable links for easy sharing and tracking.</p></div>}
             </div>
-            <div className="cursor-pointer border-b-r border-iconblue" onClick={displayinfo2}>
-              <div className='flex justify-between items-start   pb-2 pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{showinfo2 ? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-              {showinfo2&&<div className=''><p className={`text-sm sm:text-base mb-2  `} >To use weblify,you can simply enter any valid URL in a provided form field.The application will generate a shortened version of the link that you can easily copy and paste.</p></div>}
+            <div className="cursor-pointer border-b-r border-iconblue" onClick={()=>showaccordion(accordion[1].id)}>
+              <div className='flex justify-between items-start   pb-2 pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>How do i use the URL shortener?</p>{accordion[1].showinfo11 ? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              {accordion[1].showinfo11&&<div className=''><p className={`text-sm sm:text-base mb-2  `} >To use weblify,you can simply enter any valid URL in a provided form field.The application will generate a shortened version of the link that you can easily copy and paste.</p></div>}
             </div>
-            <div className="cursor-pointer border-b-r border-iconblue" onClick={displayinfo3}>
-              <div className='flex justify-between items-start   pb-2  pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{showinfo3 ? <FaChevronCircleDown  className='sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-              {showinfo3&&<div className=' '><p className={`text-sm sm:text-base mb-2 `}>yes,with weblify,you can customize your shortened URLs to make them more memorable or relevant</p></div>}
+            <div className="cursor-pointer border-b-r border-iconblue" onClick={()=>showaccordion(accordion[2].id)}>
+              <div className='flex justify-between items-start   pb-2  pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Can i customize my short links?</p>{accordion[2].showinfo11 ? <FaChevronCircleDown  className='sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              {accordion[2].showinfo11&&<div className=' '><p className={`text-sm sm:text-base mb-2 `}>yes,with weblify,you can customize your shortened URLs to make them more memorable or relevant</p></div>}
             </div>
-            <div className="cursor-pointer border-b-r border-iconblue" onClick={displayinfo4} > 
-              <div className='flex justify-between items-start   pb-2  pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Are there analytics <br className="sm:hidden"></br> available for my short links?</p>{showinfo4 ? <FaChevronCircleDown  className='sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-              {showinfo4&&<div className=''><p className={`text-sm sm:text-base mb-2  `}>Weblify provides analytics,allowing you to track the number of clicks and other insights for each shortened URL through your dashboard.</p></div>}
+            <div className="cursor-pointer border-b-r border-iconblue" onClick={()=>showaccordion(accordion[3].id)} > 
+              <div className='flex justify-between items-start   pb-2  pt-2'> <p className='text-base font-medium sm:text-base md:text-lg'>Are there analytics <br className="sm:hidden"></br> available for my short links?</p>{accordion[3].showinfo11 ? <FaChevronCircleDown  className='sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              {accordion[3].showinfo11&&<div className=''><p className={`text-sm sm:text-base mb-2  `}>Weblify provides analytics,allowing you to track the number of clicks and other insights for each shortened URL through your dashboard.</p></div>}
             </div>
-            <div className="cursor-pointer border-b-r border-iconblue" onClick={displayinfo5}>
-              <div className='flex justify-between items-start   pb-2  pt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>Is there a limit to the <br className="sm:hidden"></br>number of links i can shorten?</p>{showinfo5 ? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-              {showinfo5&&<div className=''><p className={`text-sm sm:text-base mb-2 `} >No,ther is no limit to the number of URLs you can shorten using weblify.</p></div>}
+            <div className="cursor-pointer border-b-r border-iconblue" onClick={()=>showaccordion(accordion[4].id)}>
+              <div className='flex justify-between items-start   pb-2  pt-2 gap-4'> <p className='text-base font-medium sm:text-base md:text-lg'>Is there a limit to the <br className="sm:hidden"></br>number of links i can shorten?</p>{accordion[4].showinfo11 ? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp  className='text-iconblue sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+              {accordion[4].showinfo11&&<div className=''><p className={`text-sm sm:text-base mb-2 `} >No,ther is no limit to the number of URLs you can shorten using weblify.</p></div>}
             </div>
-            <div className="cursor-pointer border-b-r border-iconblue" onClick={displayinfo6}>
-              <div className='flex items-start justify-between    pb-2  pt-2 gap-4'> <p className='text-base font-medium  sm:text-base md:text-lg'>How long are my shorts links generated <br className="sm:hidden"></br>by your platform?</p>{showinfo6 ? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp className='text-iconblue  sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
-             {showinfo6 && <div className=''><p className={` text-sm sm:text-base mb-2 `} >The shortened URLs will follow the format:https://weblify.onrender.com/v1/urls/sh/id where id is a randomly generated alphanumeric string of 6 characters.Additionally,for Customizable URLs,the format will be https://weblify.onrender.com/v1/urls/sh/text,where text is a user defined alphanumeric string</p></div>}
+            <div className="cursor-pointer border-b-r border-iconblue" onClick={()=>showaccordion(accordion[5].id)}>
+              <div className='flex items-start justify-between    pb-2  pt-2 gap-4'> <p className='text-base font-medium  sm:text-base md:text-lg'>How long are my shorts links generated <br className="sm:hidden"></br>by your platform?</p>{accordion[5].showinfo11? <FaChevronCircleDown  className=' sm:text-base lg:text-xl text-iconblue hover:cursor-pointer' /> : <FaChevronCircleUp className='text-iconblue  sm:text-base lg:text-xl hover:cursor-pointer' />}</div>
+             {accordion[5].showinfo11 && <div className=''><p className={` text-sm sm:text-base mb-2 `} >The shortened URLs will follow the format:https://weblify.onrender.com/v1/urls/sh/id where id is a randomly generated alphanumeric string of 6 characters.Additionally,for Customizable URLs,the format will be https://weblify.onrender.com/v1/urls/sh/text,where text is a user defined alphanumeric string</p></div>}
             </div>
           </div>
         </div>

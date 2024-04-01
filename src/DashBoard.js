@@ -185,7 +185,7 @@ window.addEventListener('popstate', function (event) {
 
 
 
-
+{/* 
 <div className={`fixed pt-14 top-14  w-52 duration-500 ease-out transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen ${!handleChange ? 'duration-500 ease-in-out block' : 'duration-500 ease-in-out hidden'}   lg:hidden  h-screen}`}>
   <div className="flex mb-14">
   <img src={Scanner} className="w-6 h-6 mr-2" />
@@ -209,7 +209,7 @@ window.addEventListener('popstate', function (event) {
     
 
 
-</div>
+</div> */}
 
 
 
@@ -217,7 +217,7 @@ window.addEventListener('popstate', function (event) {
 
 
 
-<div className= "fixed pt-20 w-52 top-16 bg-white shadow-2xl pl-2   shadow-blue-300 h-screen lg:block hidden" >
+{/* <div className= "fixed pt-20 w-52 top-16 bg-white shadow-2xl pl-2   shadow-blue-300 h-screen lg:block hidden" >
   <div className="flex  mb-14">
   <img src={Scanner} className="w-6 h-6 mr-2" />
  <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold text-blue-500' >Dashboard</NavLink> 
@@ -237,7 +237,7 @@ window.addEventListener('popstate', function (event) {
 
 </div>
 
-</div>
+</div> */}
 
 
 
