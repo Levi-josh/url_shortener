@@ -12,7 +12,7 @@ const Analytics = () => {
 
 
     return (
-        <div className='w-full h-screen mt-10 pb-5 px-3  '>
+        <div className='w-full h-screen mt-10 pb-5 lg:px-0  sm:px-6 px-4  lg:pl-80  '>
             {/* <header className='h-20  w-full bg-black text-white '>
                 <button onClick={changeicon} className='bg-blue-700 w-10 h-10'></button>
                 <h1>weblify</h1>
@@ -56,11 +56,11 @@ const Analytics = () => {
                 </div>
 
             </div> */}
-            <div className=' lg:ml-60 sm:px-6 px-4  '>
-                <h1 className='lg:hidden  m-auto mt-10 font-bold text-xl sm:w-140'> Analytics</h1>
+            <div className=''>
+                <h1 className='lg:hidden text-blue-600 text-2xl  m-auto mt-10 font-bold sm:w-140'> Analytics</h1>
                 <p className='w-110  m-auto mt-12 text-lg mb-3 lg:mt-8 lg:w-22 sm:w-140 lg:m-0 lg:mb-3 lg:text-xl font-medium'>shorturl1ttt</p>
 
-                <div className='flex flex-col gap-5   py-12   w-full sm:w-135 md:w-140 lg:w-25 xl:w-22 border-2   border-blue-700 m-auto lg:m-0    '>
+                <div className='flex flex-col gap-5   py-12   w-full md:w-150 lg:w-96   border-2  border-blue-300 m-auto md:m-0    '>
                     <div className='flex gap-2 px-7  justify-center  '>
                         <h1 className=' font-bold whitespace-nowrap  '>Original URL :</h1>
                         <p className='break-words max-w-22 sm:max-w-130 ' >http//www.example.com/page</p>
@@ -82,7 +82,7 @@ const Analytics = () => {
                 </div>
 
             </div>
-            <div className='lg:ml-60 mb-40 w-full md:w-250 m-auto   lg:w-250 '>
+            <div className=' mb-40 w-full md:w-270 m-auto md:m-0   lg:w-250  xl:w-270'>
                 {/* <div className='absolute flex justify-start sm:gap-11 md:gap-14 lg:gap-15 sm:w-150 w-full md:w-250 lg:w-250    h-60 sm:pl-6 md:pl-8 '>
                     <div className='flex items-end justify-center gap-2  '>
                         <div className='w-4 bg-blue-600 h-10'></div>
@@ -106,10 +106,10 @@ const Analytics = () => {
                         <div className='w-4 bg-red-600 h-32'></div>
                     </div>
                 </div> */}
-                <table className='border border-blue-600 w-full  md:w-250 m-auto lg:mt-12 lg:m-0 lg:w-250 h-60 mt-10'>
+                <table className=' border-blue-600 w-full  md:w-270 m-auto lg:mt-12 lg:m-0 lg:w-250 xl:w-270 h-60 mt-10'>
 
                     <tbody>
-                        <tr className='border border-blue-600'>
+                        <tr className=' border-blue-600'>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
@@ -163,14 +163,14 @@ const Analytics = () => {
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600   '></td>
                         </tr>
-                        <tr className='border border-blue-600'>
+                        <tr className=' border-blue-600'>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
-                            <td className='border border-blue-600 relative'> <div className='flex bg-gray-950 absolute margin items-end justify-center gap-2  '>
+                            <td className='border border-blue-600 relative'> <div className='flex hidden bg-gray-950 absolute margin items-end justify-center gap-2  '>
                         <div className='w-4 bg-blue-600 h-20'></div>
                         <div className='w-4 bg-red-600 h-8'></div>
                     </div></td>
