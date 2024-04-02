@@ -110,13 +110,9 @@ const handleSubmit = async (e) => {
 
       
       headers: {
-
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accesstoken} `
-
       },
-      
-
       body: JSON.stringify({ originalUrl : text , customText: customtext })
     }
 
