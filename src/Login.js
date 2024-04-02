@@ -85,7 +85,7 @@ function Login() {
 
 
   return (
-    <div className=" relative overflow-y-hidden lg:overflow-y-visible h-screen">
+    <div className=" relative   h-screen">
 <NavLink to={'/'}><FaArrowLeft className="absolute font-bold top-6 left-6 sm:top-10 sm:left-10 sm:text-lg"/></NavLink>
 
 
@@ -139,9 +139,9 @@ function Login() {
 
       {showForm ? (
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:block ">
 
-          <div className="flex items-center justify-center h-screen min-h-screen bg-white  m-0   ">
+          <div className="flex items-center justify-center h-screen min-h-screen   m-0   ">
 
             <div className=" bg-newblue xl:w-121 w-122 text-center pt-10 pb-10 md:mr-4  lg:mr-10 lg:px-8 lg:pb-12 md:py-12 lg:pt-12 md:px-4 relative hidden lg:block  rounded-lg shadow-lg " >
               <h3 className="font-bold text-xl lg:text-2xl "> Sign In</h3>

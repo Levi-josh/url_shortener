@@ -36,7 +36,7 @@ function Signup() {
       const data = await response.json()
       setUsers(data.data)
 
-      if (data?.data.id) { return navigate('/?access=${data.data.accessToken}') }
+      if (data?.data.id) { return navigate('/DashBoardHome/DashBoard?access=${data.data.accessToken}') }
     }
 
     catch (err) {

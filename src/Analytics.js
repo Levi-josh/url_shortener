@@ -82,7 +82,21 @@ const Analytics = () => {
                 </div>
 
             </div>
-            <div className=' mb-40 w-full md:w-270 m-auto md:m-0   lg:w-250  xl:w-270'>
+            <div className=' mb-40 w-full  md:w-270 m-auto md:m-0  flex items-center   lg:w-250  xl:w-270'>
+                
+            <table className='h-60 w-10 mt-10 lg:mt-12'>
+                <tbody className=''>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>120</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>100</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>80</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>60</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>40</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>20</p></td></tr>
+                    <tr className='relative'><td className=' border-r-0 border-l-0 border-blue-600'><p className='absolute right-2'>0</p></td></tr>
+                    
+                </tbody>
+            </table>
+               
                 {/* <div className='absolute flex justify-start sm:gap-11 md:gap-14 lg:gap-15 sm:w-150 w-full md:w-250 lg:w-250    h-60 sm:pl-6 md:pl-8 '>
                     <div className='flex items-end justify-center gap-2  '>
                         <div className='w-4 bg-blue-600 h-10'></div>
@@ -146,7 +160,7 @@ const Analytics = () => {
                             <td className='border border-blue-600'></td>
                         </tr>
                         <tr className='border border-blue-600'>
-                            <td className='border border-blue-600 '><p className='absolute'>a</p></td>
+                            <td className='border border-blue-600 '></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
@@ -170,7 +184,7 @@ const Analytics = () => {
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
                             <td className='border border-blue-600'></td>
-                            <td className='border border-blue-600 relative'> <div className='flex hidden bg-gray-950 absolute margin items-end justify-center gap-2  '>
+                            <td className='border border-blue-600 relative'> <div className=' hidden bg-gray-950 absolute margin items-end justify-center gap-2  '>
                         <div className='w-4 bg-blue-600 h-20'></div>
                         <div className='w-4 bg-red-600 h-8'></div>
                     </div></td>

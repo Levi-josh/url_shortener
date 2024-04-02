@@ -23,7 +23,7 @@ function DashBoardHome () {
         <div className="lg:pt-20 pt-16 ">
         
 
-        <div className={`fixed pt-14 top-14  w-52 duration-500 ease-out transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen ${!handleChange ? 'duration-500 ease-in-out block' : 'duration-500 ease-in-out hidden'}   lg:hidden  h-screen}`}>
+        <div className={`fixed pt-14 top-14  w-52 duration-500 ease-out transition-all  bg-white shadow-2xl pl-2 z-10 lg:hidden shadow-blue-300 h-screen  ${!handleChange ? 'duration-500 ease-in-out block' : 'duration-500 ease-in-out hidden'}    }`}>
                 <div className="flex mb-14">
                 <img src={Scanner} className="w-6 h-6 mr-2" />
                     <NavLink to='/DashBoardHome/DashBoard' className='text-xl font-bold' >Dashboard</NavLink>
